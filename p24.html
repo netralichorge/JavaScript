@@ -39,26 +39,52 @@
 
     <a href="https://www.google.co.in/" id="link">Google</a>
 
-    <form action="">
-        <input type="text">
+    <form action="" onsubmit="" id="form">
+
+        <input type="text" name="username">
+        <input type="text" name="age">
+        
+
         <input type="submit" value="Submit">
     </form>
 
     <script>
+        // types of event propagation - event bubbling and event capturing
+        // write true for event capturing(child to parent) and for event bubbling use false(parent to child)
 
         document.getElementById("container").addEventListener("click",()=>{
             alert("container");
         })
 
         document.getElementById("box").addEventListener("click",(e)=>{
-            e.stopPropagation();  //for stop propagation
+          //  e.stopPropagation();  //for stop propagation
             alert("box"); // for show alert box
-        })
+        },true)
 
         document.getElementById("Heading").addEventListener("click",(e)=>{
-            e.stopPropagation();
+            //e.stopPropagation();
             alert("Heading");
+        },true)
+                                                            
+        document.getElementById("link").addEventListener("click",(event)=>{
+
+            event.preventDefault();
+        },true)
+
+        document.getElementById("form").addEventListener("submit",(event)=>{
+            event.preventDefault();
+            console.log(event.target.age.value);
+            console.log(event.target.username.value);
+            //for display input bocx value
+            console.log(event.target.username.type); 
+            //for display input box type
+            
+
+
+
         })
+     
+    
 
     </script>
 </body>
