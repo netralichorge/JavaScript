@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //rest operator will be apply on last element
+        
+        const student= {
+            id:101,
+            name:"Priya",
+            marks:70
+
+        }
+
+        //object destructuring
+        function details({id,name,marks})
+        {
+            console.log(id);
+            console.log(name);
+            console.log(marks);
+        }
+        // console - details(student)
+
+        const numbers=[12,56,89,90,34,23]
+    
+        function add([a,b]) // array destructuring
+        {
+            return (a+b);
+        }
+        // console - add(numbers)
+
+    </script>
+</body>
+</html>
