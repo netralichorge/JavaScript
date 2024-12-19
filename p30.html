@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1000=1sec
+        //setTimeOut(function,time)
+
+        function hello()
+        {
+            document.write("Hello");
+        }
+
+        function Bye()
+        {
+            document.write("Bye");
+        }
+
+       // setTimeout(hello,5000); OR
+        
+       setTimeout(()=>{
+            hello();
+        },5000)  
+     
+        setTimeout(()=>{
+            Bye();
+        },1000)
+    </script>
+</body>
+</html>
