@@ -6,14 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button id="catfact">Click</button>
+
+    <div id="fact">Cat Fact</div>
     
     <script>
         //fetch is a function 
         //fetch will return object of promise
 
+        document.getElementById("catfact").addEventListener("click",()=>{
         const promise = fetch("https://catfact.ninja/fact");
     
-        promise.then(data=>console.log(data.json()));
+        promise.then(data=>data.json())
+        .then(data=>{
+            document.getElementById("fact").innerHTML="<h1>"+data["fact"]+"</h1>";
+        });
+
+    })
 
     </script>
 </body>
